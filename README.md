@@ -69,126 +69,11 @@ Change the appearance of your newspaper:
 
 ---
 
-
-### `index.html`
-
-Contains the structure of the publishing studio, newspaper pages, editor controls, navigation, and footer.
-
-### `style.css`
-
-Handles the complete visual system including:
-
-* Layout
-* Typography
-* Newspaper grids
-* Paper themes
-* Responsive design
-* Editor panels
-* Page states
-* Footer
-
-### `script.js`
-
-Controls:
-
-* Page switching
-* Live editing
-* Templates
-* Typography modes
-* Paper themes
-* Saving
-* Loading
-* New editions
-* PNG exporting
-
----
-
-## ✦ PAGE SYSTEM
-
-The newspaper is split into three editorial sections.
-
-### 01 / FRONT PAGE
-
-The main entrance to the publication.
-
-Includes:
-
-* Lead story
-* Breaking news
-* Featured story
-* Sidebar
-* Pull quote
-* Editor's note
-
-### 02 / TECH & CULTURE
-
-A magazine-style page focused on technology and culture.
-
-Includes:
-
-* Main technology story
-* Culture article
-* Trend report
-* Quick reads
-* Editorial quote
-
-### 03 / FEATURES
-
-A long-form editorial layout.
-
-Includes:
-
-* Feature headline
-* Introduction
-* Long-read content
-* Pull quote
-* Interview section
-
----
-
-## ✦ WHY I MADE IT
-
-I wanted to experiment with what happens when a **creative writing tool becomes an interface**.
-
-Instead of simply typing into a text editor, The Newspaper Room turns writing into a visual publishing process.
-
-It's part:
-
-**📰 newspaper**
-
-**✎ writing tool**
-
-**🎨 design playground**
-
-**💻 frontend experiment**
-
----
-
-## ✦ FUTURE IDEAS
-
-* [ ] Add custom images
-* [ ] Drag-and-drop article blocks
-* [ ] Add more newspaper templates
-* [ ] Custom font selection
-* [ ] Custom accent colours
-* [ ] Add more page layouts
-* [ ] Export the entire edition
-* [ ] Download all pages as a ZIP
-* [ ] Custom newspaper dimensions
-* [ ] Print-friendly mode
-* [ ] More editorial components
-
----
-
-## ✦ CREDITS
+## CREDITS
 
 **The Newspaper Room**
 
 Designed & coded by **Miksha G.**
-
-Built as a creative frontend experiment exploring:
-
-`WEB DESIGN` · `EDITORIAL DESIGN` · `UI/UX` · `JAVASCRIPT`
 
 ---
 
@@ -202,11 +87,7 @@ Made with ♡ and a little ink.
 
 <p align="center">
 
-**THE NEWSPAPER ROOM**
-
 *write something worth printing.*
-
-♡ · 📰 · ♡
 
 </p>
 
