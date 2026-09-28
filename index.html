@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>The Newspaper Room</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Libre+Baskerville:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- =========================================
+       APP
+  ========================================== -->
+
+    <div class="app">
+      <!-- =========================================
+         TOPBAR
+    ========================================== -->
+
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">N</div>
+
+          <div>
+            <h1>THE NEWSPAPER ROOM</h1>
+            <span>EDITORIAL PUBLISHING STUDIO</span>
+          </div>
+        </div>
+
+        <div class="edition-status">
+          <span class="status-dot"></span>
+          EDITION IN PROGRESS
+        </div>
+
+        <div class="top-actions">
+          <button id="newEditionBtn" class="top-btn">NEW</button>
+
+          <button id="saveBtn" class="top-btn">SAVE</button>
+
+          <button id="exportBtn" class="top-btn dark-btn">EXPORT</button>
+        </div>
+      </header>
+
+      <!-- =========================================
+         MAIN WORKSPACE
+    ========================================== -->
+
+      <main class="workspace">
+        <!-- =======================================
+           LEFT SIDEBAR
+      ======================================== -->
+
+        <aside class="sidebar">
+          <!-- Templates -->
+
+          <section class="side-section">
+            <div class="section-label">EDITION DESK</div>
+
+            <h2>Templates</h2>
+
+            <div class="template-list">
+              <button class="template active" data-template="daily">
+                <strong>The Daily Byte</strong>
+                <span>Modern daily edition</span>
+              </button>
+
+              <button class="template" data-template="midnight">
+                <strong>Midnight Herald</strong>
+                <span>Dark editorial edition</span>
+              </button>
+
+              <button class="template" data-template="archive">
+                <strong>The Archive</strong>
+                <span>Minimal historical paper</span>
+              </button>
+
+              <button class="template" data-template="culture">
+                <strong>Culture Paper</strong>
+                <span>Arts & culture edition</span>
+              </button>
+
+              <button class="template" data-template="weekly">
+                <strong>The Weekly</strong>
+                <span>Long-form weekly issue</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- Type -->
+
+          <section class="side-section">
+            <div class="section-label">TYPOGRAPHY</div>
+
+            <h2>Type</h2>
+
+            <div class="option-grid">
+              <button class="option-btn active" data-type="classic">
+                CLASSIC
+              </button>
+
+              <button class="option-btn" data-type="modern">MODERN</button>
+
+              <button class="option-btn" data-type="editorial">
+                EDITORIAL
+              </button>
+
+              <button class="option-btn" data-type="mono">MONO</button>
+            </div>
+          </section>
+
+          <!-- Paper -->
+
+          <section class="side-section">
+            <div class="section-label">PAPER</div>
+
+            <h2>Surface</h2>
+
+            <div class="paper-grid">
+              <button class="paper-btn white active" data-paper="white">
+                WHITE
+              </button>
+
+              <button class="paper-btn warm" data-paper="warm">WARM</button>
+
+              <button class="paper-btn grey" data-paper="grey">GREY</button>
+
+              <button class="paper-btn black" data-paper="black">BLACK</button>
+            </div>
+          </section>
+
+          <!-- Page selector -->
+
+          <section class="side-section page-section">
+            <div class="section-label">EDITION PAGES</div>
+
+            <h2>Sections</h2>
+
+            <div class="page-list">
+              <button class="page-btn active" data-page="0">
+                <span>01</span>
+                <strong>FRONT PAGE</strong>
+              </button>
+
+              <button class="page-btn" data-page="1">
+                <span>02</span>
+                <strong>TECH & CULTURE</strong>
+              </button>
+
+              <button class="page-btn" data-page="2">
+                <span>03</span>
+                <strong>FEATURES</strong>
+              </button>
+            </div>
+          </section>
+        </aside>
+
+        <!-- =======================================
+           CENTER
+      ======================================== -->
+
+        <section class="center">
+          <!-- Page controls -->
+
+          <div class="page-toolbar">
+            <button id="prevPage" class="nav-page">← PREVIOUS</button>
+
+            <div class="page-indicator">
+              <button class="mini-page active" data-page="0">01</button>
+
+              <button class="mini-page" data-page="1">02</button>
+
+              <button class="mini-page" data-page="2">03</button>
+            </div>
+
+            <button id="nextPage" class="nav-page">NEXT →</button>
+          </div>
+
+          <!-- =====================================
+             NEWSPAPER PREVIEW
+        ====================================== -->
+
+          <div class="newspaper-wrapper">
+            <article id="newspaper" class="newspaper">
+              <!-- Masthead -->
+
+              <header class="paper-header">
+                <div class="paper-date">MONDAY · 28 SEPTEMBER 2026</div>
+
+                <div class="masthead">THE DAILY BYTE</div>
+
+                <div class="paper-meta">VOL. 04 · NO. 28</div>
+              </header>
+
+              <!-- PAGE 01 -->
+
+              <section class="paper-page page-one">
+                <div class="page-title">FRONT PAGE</div>
+
+                <div class="front-grid">
+                  <div class="lead-story">
+                    <span class="category"> TECHNOLOGY </span>
+
+                    <h1 id="previewHeadline">
+                      THE WEB IS BECOMING A PLACE TO CREATE AGAIN
+                    </h1>
+
+                    <p class="deck" id="previewSubheadline">
+                      A new generation of designers and developers are
+                      rebuilding the internet around creativity, personality and
+                      experimentation.
+                    </p>
+
+                    <div class="byline">
+                      BY THE DAILY BYTE · 28 SEPTEMBER 2026
+                    </div>
+
+                    <div class="article-body">
+                      <p id="previewArticle">
+                        The internet has always been more than a collection of
+                        websites. It is a place where ideas become visible,
+                        communities form and creative experiments find an
+                        audience.
+                      </p>
+
+                      <p>
+                        Across independent studios, personal websites and
+                        experimental digital projects, creators are beginning to
+                        question what a modern website should feel like.
+                      </p>
+
+                      <p>
+                        Instead of designing for endless scrolling and
+                        algorithmic feeds, many are returning to intentional
+                        layouts, strong typography and experiences that feel
+                        unmistakably human.
+                      </p>
+                    </div>
+                  </div>
+
+                  <aside class="front-sidebar">
+                    <div class="sidebar-story">
+                      <span class="category"> BREAKING </span>
+
+                      <h2 id="previewSidebar">
+                        SMALL WEBSITES ARE HAVING A BIG MOMENT
+                      </h2>
+
+                      <p>
+                        Personal pages, tiny digital studios and independent
+                        projects are finding new audiences online.
+                      </p>
+                    </div>
+
+                    <div class="quote-box">
+                      <span> EDITOR'S NOTE </span>
+
+                      <blockquote id="previewQuote">
+                        “Make something worth clicking on.”
+                      </blockquote>
+                    </div>
+
+                    <div class="side-list">
+                      <div>
+                        <span>01</span>
+                        DESIGN SYSTEMS
+                      </div>
+
+                      <div>
+                        <span>02</span>
+                        CREATIVE CODE
+                      </div>
+
+                      <div>
+                        <span>03</span>
+                        DIGITAL CULTURE
+                      </div>
+                    </div>
+                  </aside>
+                </div>
+              </section>
+
+              <!-- PAGE 02 -->
+
+              <section class="paper-page page-two">
+                <div class="page-title">TECH & CULTURE</div>
+
+                <div class="two-column-layout">
+                  <main>
+                    <span class="category"> DIGITAL CULTURE </span>
+
+                    <h1 class="page-headline">
+                      WHY PERSONAL WEBSITES ARE COMING BACK
+                    </h1>
+
+                    <p class="deck">
+                      The internet is rediscovering the charm of spaces designed
+                      by people rather than platforms.
+                    </p>
+
+                    <div class="byline">CULTURE DESK · THE DAILY BYTE</div>
+
+                    <div class="article-body">
+                      <p>
+                        There was a time when having a website meant having your
+                        own little corner of the internet. It could be strange,
+                        colourful, minimal, messy or completely experimental.
+                      </p>
+
+                      <p>
+                        Today's independent web creators are bringing some of
+                        that personality back. Instead of following a single
+                        visual language, designers are building interfaces
+                        around identity.
+                      </p>
+
+                      <p>
+                        The result is an internet that feels less uniform. Small
+                        websites can become portfolios, magazines, digital
+                        gardens, archives, experiments or simply places to play.
+                      </p>
+                    </div>
+
+                    <div class="article-rule"></div>
+
+                    <h2 class="subheading">THE NEW CREATIVE WEB</h2>
+
+                    <p class="article-body">
+                      Typography, interaction and visual identity are becoming
+                      central parts of how creators communicate online.
+                      Developers are no longer simply implementing designs; they
+                      are increasingly shaping the entire experience.
+                    </p>
+                  </main>
+
+                  <aside class="culture-sidebar">
+                    <div class="culture-card">
+                      <span class="category"> TREND REPORT </span>
+
+                      <h2>THE RETURN OF THE DIGITAL ZINE</h2>
+
+                      <p>
+                        Small editorial projects are becoming a popular way to
+                        combine writing, design and web development.
+                      </p>
+                    </div>
+
+                    <div class="culture-card dark">
+                      <span class="category"> QUICK READ </span>
+
+                      <h2>5 THINGS MAKING THE WEB FEEL PERSONAL AGAIN</h2>
+
+                      <ol>
+                        <li>Custom typography</li>
+                        <li>Independent publishing</li>
+                        <li>Interactive experiments</li>
+                        <li>Personal archives</li>
+                        <li>Distinct visual identities</li>
+                      </ol>
+                    </div>
+
+                    <div class="quote-box">
+                      <span> THE CULTURE DESK </span>
+
+                      <blockquote>
+                        “A website can be a place, not just a product.”
+                      </blockquote>
+                    </div>
+                  </aside>
+                </div>
+              </section>
+
+              <!-- PAGE 03 -->
+
+              <section class="paper-page page-three">
+                <div class="page-title">FEATURES</div>
+
+                <div class="feature-header">
+                  <span class="category"> LONG READ </span>
+
+                  <h1>BUILDING SOMETHING THAT FEELS LIKE YOURS</h1>
+
+                  <p class="feature-intro">
+                    A closer look at the designers creating digital spaces with
+                    personality, intention and a little bit of chaos.
+                  </p>
+                </div>
+
+                <div class="feature-columns">
+                  <div class="article-body">
+                    <p>
+                      A good digital experience does not necessarily need
+                      hundreds of features. Sometimes the strongest interfaces
+                      are built around one clear idea and a strong point of
+                      view.
+                    </p>
+
+                    <p>
+                      For independent creators, this means the website itself
+                      can become part of the work. The typography becomes a
+                      voice. The layout becomes a rhythm. Interaction becomes a
+                      way of telling the visitor where to look next.
+                    </p>
+
+                    <p>
+                      This approach changes the question from “What features
+                      should this website have?” to “What should this website
+                      make someone feel?”
+                    </p>
+                  </div>
+
+                  <div class="feature-quote">
+                    <blockquote>
+                      “Design is not decoration. It is the atmosphere
+                      surrounding the idea.”
+                    </blockquote>
+
+                    <span> — FEATURES DESK </span>
+                  </div>
+
+                  <div class="article-body">
+                    <p>
+                      The answer might be curiosity. It might be nostalgia. It
+                      might be excitement, calm or even confusion. Digital
+                      spaces can carry emotion in much the same way that
+                      physical spaces do.
+                    </p>
+
+                    <p>
+                      That is why the smallest decisions matter: a strange
+                      headline, an oversized letter, a tiny piece of copy, an
+                      unexpected interaction or a page that refuses to behave
+                      exactly as expected.
+                    </p>
+
+                    <p>
+                      In an increasingly standardised web, these details become
+                      signatures.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="interview">
+                  <div class="interview-label">THE INTERVIEW</div>
+
+                  <h2>WHAT MAKES A WEBSITE MEMORABLE?</h2>
+
+                  <div class="qa">
+                    <strong>Q.</strong>
+
+                    <p>Is visual polish enough?</p>
+
+                    <strong>A.</strong>
+
+                    <p>
+                      Not really. A memorable website usually has a point of
+                      view. It feels like someone made deliberate choices rather
+                      than simply filling a template.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Paper footer -->
+
+              <footer class="paper-footer">
+                <span> THE DAILY BYTE </span>
+
+                <span> PAGE <strong id="paperFooterPage">01</strong> </span>
+
+                <span> THE NEWSPAPER ROOM </span>
+              </footer>
+            </article>
+          </div>
+        </section>
+
+        <!-- =======================================
+           RIGHT EDITOR
+      ======================================== -->
+
+        <aside class="editor-panel">
+          <div class="editor-header">
+            <div class="section-label">CONTENT EDITOR</div>
+
+            <h2 id="editorPageTitle">Front Page</h2>
+
+            <p>Edit the content for the current newspaper section.</p>
+          </div>
+
+          <!-- FRONT PAGE EDITOR -->
+
+          <div class="editor-page editor-page-0 active">
+            <div class="editor-card">
+              <h3>IDENTITY</h3>
+
+              <label> MASTHEAD </label>
+
+              <input id="mastheadInput" type="text" value="THE DAILY BYTE" />
+
+              <label> DATE </label>
+
+              <input
+                id="dateInput"
+                type="text"
+                value="MONDAY · 28 SEPTEMBER 2026"
+              />
+            </div>
+
+            <div class="editor-card">
+              <h3>LEAD STORY</h3>
+
+              <label> HEADLINE </label>
+
+              <textarea id="headlineInput">
+THE WEB IS BECOMING A PLACE TO CREATE AGAIN</textarea
+              >
+
+              <label> SUBHEADLINE </label>
+
+              <textarea id="subheadlineInput">
+A new generation of designers and developers are rebuilding the internet around creativity, personality and experimentation.</textarea
+              >
+            </div>
+
+            <div class="editor-card">
+              <h3>ARTICLE</h3>
+
+              <label> BODY </label>
+
+              <textarea id="articleInput" class="large-input">
+The internet has always been more than a collection of websites. It is a place where ideas become visible, communities form and creative experiments find an audience.</textarea
+              >
+            </div>
+
+            <div class="editor-card">
+              <h3>SIDEBAR</h3>
+
+              <label> STORY </label>
+
+              <textarea id="sidebarInput">
+SMALL WEBSITES ARE HAVING A BIG MOMENT</textarea
+              >
+
+              <label> EDITOR'S QUOTE </label>
+
+              <textarea id="quoteInput">
+“Make something worth clicking on.”</textarea
+              >
+            </div>
+          </div>
+
+          <!-- PAGE 02 EDITOR -->
+
+          <div class="editor-page editor-page-1">
+            <div class="editor-card">
+              <h3>TECH & CULTURE</h3>
+
+              <label> HEADLINE </label>
+
+              <textarea>
+WHY PERSONAL WEBSITES ARE COMING BACK
+            </textarea
+              >
+
+              <label> DECK </label>
+
+              <textarea>
+The internet is rediscovering the charm of spaces designed by people rather than platforms.
+            </textarea
+              >
+            </div>
+
+            <div class="editor-card">
+              <h3>CULTURE STORY</h3>
+
+              <label> ARTICLE </label>
+
+              <textarea class="large-input">
+There was a time when having a website meant having your own little corner of the internet. It could be strange, colourful, minimal, messy or completely experimental.
+
+Today's independent web creators are bringing some of that personality back.
+            </textarea
+              >
+            </div>
+
+            <div class="editor-card">
+              <h3>TREND REPORT</h3>
+
+              <label> TITLE </label>
+
+              <input type="text" value="THE RETURN OF THE DIGITAL ZINE" />
+
+              <label> DESCRIPTION </label>
+
+              <textarea>
+Small editorial projects are becoming a popular way to combine writing, design and web development.
+            </textarea
+              >
+            </div>
+          </div>
+
+          <!-- PAGE 03 EDITOR -->
+
+          <div class="editor-page editor-page-2">
+            <div class="editor-card">
+              <h3>FEATURE</h3>
+
+              <label> HEADLINE </label>
+
+              <textarea>
+BUILDING SOMETHING THAT FEELS LIKE YOURS
+            </textarea
+              >
+
+              <label> INTRO </label>
+
+              <textarea>
+A closer look at the designers creating digital spaces with personality, intention and a little bit of chaos.
+            </textarea
+              >
+            </div>
+
+            <div class="editor-card">
+              <h3>FEATURE BODY</h3>
+
+              <label> ARTICLE </label>
+
+              <textarea class="large-input">
+A good digital experience does not necessarily need hundreds of features. Sometimes the strongest interfaces are built around one clear idea and a strong point of view.
+
+For independent creators, this means the website itself can become part of the work.
+            </textarea
+              >
+            </div>
+
+            <div class="editor-card">
+              <h3>INTERVIEW</h3>
+
+              <label> QUESTION </label>
+
+              <input type="text" value="WHAT MAKES A WEBSITE MEMORABLE?" />
+
+              <label> ANSWER </label>
+
+              <textarea>
+Not really. A memorable website usually has a point of view. It feels like someone made deliberate choices rather than simply filling a template.
+            </textarea
+              >
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+  <div class="footer-brand">
+    <span class="footer-mark">N</span>
+
+    <div>
+      <strong>THE NEWSPAPER ROOM</strong>
+      <span>an editorial playground for curious creators ♡</span>
+    </div>
+  </div>
+
+  <div class="footer-meta">
+    <span>© 2026 ALL RIGHTS RESERVED.</span>
+    <span>DESIGNED &amp; CODED BY MIKSHA</span>
+  </div>
+
+  <div class="footer-right">
+    <span>Volume 1.0</span>
+    <span>MADE WITH ♡ &amp; A LITTLE INK</span>
+  </div>
+
+</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
