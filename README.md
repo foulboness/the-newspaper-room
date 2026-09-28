@@ -1,4 +1,4 @@
-# 📰 THE NEWSPAPER ROOM
+# THE NEWSPAPER ROOM
 
 > a tiny editorial studio for curious creators ♡
 
@@ -8,9 +8,9 @@ Designed to feel like a little independent publishing desk, the project combines
 
 ---
 
-## ✦ FEATURES
+## FEATURES
 
-### 🗞️ Multi-page newspaper editor
+### Multi-page newspaper editor
 
 Create different sections of your publication:
 
@@ -20,25 +20,13 @@ Create different sections of your publication:
 
 Each page has its own editorial layout and content.
 
-### ✎ Live editing
+### Live editing
 
 Edit your newspaper directly from the editor panel.
 
-You can change:
-
-* Masthead
-* Date
-* Headlines
-* Subheadlines
-* Articles
-* Sidebar stories
-* Quotes
-* Feature content
-* Interviews
-
 Changes appear directly in the newspaper preview.
 
-### ◌ Newspaper templates
+### Newspaper templates
 
 Choose from different editorial starting points:
 
@@ -58,7 +46,7 @@ Experiment with different visual styles:
 * Editorial
 * Mono
 
-### ▧ Paper themes
+### Paper themes
 
 Change the appearance of your newspaper:
 
@@ -67,89 +55,20 @@ Change the appearance of your newspaper:
 * Grey
 * Black
 
-### 💾 Local saving
-
-Your current edition can be saved using the browser's `localStorage`, allowing you to return to your work without needing a backend.
-
-### ↓ PNG Export
-
-Export the current newspaper page as a high-resolution **PNG image**.
-
-Perfect for:
-
-* Portfolio pieces
-* Social media graphics
-* Editorial mockups
-* Design experiments
-* Digital zines
-* Creative projects
 
 ---
 
-## ✦ DESIGN DIRECTION
+## TECH STACK
 
-The interface takes inspiration from:
-
-```text
-EDITORIAL DESIGN
-       +
-NEWSPAPER LAYOUTS
-       +
-DIGITAL PUBLISHING
-       +
-MODERN UI DESIGN
-```
-
-The visual language uses:
-
-* Strong typography
-* Structured grids
-* Thin editorial borders
-* Oversized headlines
-* Restrained colour
-* Paper-like surfaces
-* Newspaper-inspired hierarchy
-
-The goal was to make the interface feel more like an **actual publishing desk** than a traditional web form.
-
----
-
-## ✦ TECH STACK
-
-### Frontend
-
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat-square\&logo=html5\&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat-square\&logo=css3\&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square\&logo=javascript\&logoColor=black)
 
 ### Libraries & Tools
 
 * **HTML5**
 * **CSS3**
 * **JavaScript**
-* **html2canvas**
-* **Google Fonts**
-
-### Browser APIs
-
-* `localStorage`
-* `Blob`
-* `File`
-* DOM manipulation
 
 ---
 
-## ✦ PROJECT STRUCTURE
-
-```text
-the-newspaper-room/
-│
-├── index.html
-├── style.css
-├── script.js
-│
-└── README.md
-```
 
 ### `index.html`
 
